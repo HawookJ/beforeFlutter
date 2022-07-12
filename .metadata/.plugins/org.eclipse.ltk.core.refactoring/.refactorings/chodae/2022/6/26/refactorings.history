@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ServletInitializer.java&apos; to &apos;login/src/main/java/com.example.login&apos;&#x0D;&#x0A;- Original project: &apos;chodae&apos;&#x0D;&#x0A;- Destination element: &apos;login/src/main/java/com.example.login&apos;&#x0D;&#x0A;- Original element: &apos;com.chodae.ServletInitializer.java&apos;" description="Copy compilation unit" destination="=login/src\/main\/java&lt;com.example.login" element1="/src\/main\/java&lt;com.chodae{ServletInitializer.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1656023595021" units="1" version="1.0"/>
+</session>

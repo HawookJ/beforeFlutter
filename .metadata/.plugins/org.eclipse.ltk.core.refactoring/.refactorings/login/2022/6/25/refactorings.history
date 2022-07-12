@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.example.security&apos; to &apos;com.example.security.config&apos;&#x0D;&#x0A;- Original project: &apos;login&apos;&#x0D;&#x0A;- Original element: &apos;login/src/main/java/com.example.security&apos;&#x0D;&#x0A;- Renamed element: &apos;login/src/main/java/com.example.security.config&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.example.security&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;com.example.security" name="com.example.security.config" qualified="false" references="true" stamp="1655236626335" textual="false" version="1.0"/>
+</session>
