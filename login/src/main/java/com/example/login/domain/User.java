@@ -6,7 +6,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,12 +22,19 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import com.example.group.MemberRole;
+import com.example.login.group.MemberRole;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
+@Setter
+@Getter
+@ToString
 @Table(name ="user_info" )
 @NoArgsConstructor
 @AllArgsConstructor
@@ -35,6 +44,7 @@ import lombok.NoArgsConstructor;
 @DynamicUpdate
 public class User implements Serializable{
 
+	@JsonIgnore
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
@@ -42,6 +52,8 @@ public class User implements Serializable{
 	private String loginId;
 	
 	private String password;
+	
+	private String refreshToken;
 	
 	private boolean social;
 	
@@ -58,7 +70,14 @@ public class User implements Serializable{
 	private String nickname;
 	
 	private String status;
+	
+	@ElementCollection(fetch = FetchType.LAZY)
+	@Builder.Default
 	private Set<MemberRole> roleSet = new HashSet<>();
+	
+	public void addMemberRole(MemberRole memberRole) {
+		roleSet.add(memberRole);
+	}
 	
 	@CreationTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
